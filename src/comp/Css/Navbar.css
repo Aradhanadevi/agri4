@@ -1,0 +1,79 @@
+/* General Styles */
+.navbar {
+  background-color: #f8f9fa; /* Light background for the navbar */
+  padding: 15px 20px; /* Padding for the navbar */
+  border-bottom: 2px solid #e9ecef; /* Subtle border for separation */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  width: 40px; /* Logo size increased for better visibility */
+  margin-right: 10px; /* Spacing between logo and text */
+}
+
+.navbar-nav {
+  flex-wrap: wrap; /* Allow items to wrap */
+}
+
+.nav-item {
+  margin: 5px 10px; /* Space between items */
+}
+
+.nav-link {
+  color: #343440; /* Default link color */
+  text-transform: uppercase; /* Transform text to uppercase */
+  font-size: 16px; /* Base font size */
+  font-family: 'Cabin', sans-serif; /* Font family */
+  letter-spacing: 1px; /* Spacing between letters */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color transition on hover */
+  padding: 8px 15px; /* Padding for better touch target size */
+  border-radius: 5px; /* Rounded edges for links */
+}
+
+.nav-link:hover {
+  color: #ffffff; /* White text color on hover */
+  background-color: #349668; /* Dark background on hover */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .navbar-nav {
+    justify-content: center; /* Center align items on smaller screens */
+  }
+
+  .nav-item {
+    flex-basis: 100%; /* Each item takes full width */
+    text-align: center; /* Center text in the item */
+  }
+  .navbar-toggler {
+    border-color: #343440; /* Border color of the navbar toggler button */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #343440; /* Dark color for the icon lines */
+  }
+  
+  
+}
+
+@media (max-width: 576px) {
+  .nav-link {
+    font-size: 14px; /* Smaller font size for extra small screens */
+  }
+  .navbar-toggler {
+
+    background-color: #343440;
+    color: white;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #343440; /* Dark color for the icon lines */
+  }
+  
+
+}
+

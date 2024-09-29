@@ -1,0 +1,41 @@
+.container {
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #4CAF50;
+  }
+  .cropmain{
+    background-color: #dee7d9;
+  }
+  
+  .card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .b1 {
+    background-color: #4CAF50;
+    border: none;
+  }
+  
+  .b1:hover {
+    background-color: #45A049;
+  }

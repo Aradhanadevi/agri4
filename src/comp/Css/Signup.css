@@ -1,0 +1,149 @@
+/* General Styling */
+.signup-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #9cf2ba, #1b6d4d);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.signup-card {
+    display: flex;
+    flex-direction: row;
+    background-color: #c5e1cf;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.signup-form {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signup-form h2 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+}
+
+.signup-form .form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #d1d5db;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-form input:focus {
+    border-color: #3f4cbb;
+    box-shadow: 0 0 10px rgba(63, 76, 187, 0.3);
+    outline: none;
+    transform: scale(1.02); /* Slight zoom-in on focus */
+}
+
+.btn-signup {
+    background-color: #2a875c;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-signup:hover {
+    background-color: #7acfae;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.signup-form p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-form p a {
+    color: #3f4cbb;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.signup-form p a:hover {
+    text-decoration: underline;
+    color: #303ba7;
+}
+
+/* Signup Image */
+/* Signup Image */
+.signup-image {
+    flex: 0.5; /* Make the image take less space compared to the form */
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-image img {
+    width: 80%; /* Adjusted to make the image smaller within the container */
+    height: auto;
+    object-fit: contain; /* Ensure the aspect ratio is maintained */
+    transition: transform 0.3s ease;
+    border-top-right-radius: 16px; /* Rounded corners to match card */
+    border-bottom-right-radius: 16px;
+}
+
+.signup-image img:hover {
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .signup-image {
+        display: flex; /* Display image on larger screens */
+    }
+}
+
+@media (min-width: 768px) {
+    .signup-image {
+        display: block;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

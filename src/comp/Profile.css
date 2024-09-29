@@ -1,0 +1,103 @@
+* {
+  font-family: 'Helvetica', sans-serif;
+  box-sizing: border-box; /* Ensures padding and borders are included in total width and height */
+}
+
+.profile-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #e8f5e9; /* Light green background */
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+.mainprofile{
+  background: linear-gradient(to bottom, #a8dcbd, #307f5a);
+}
+
+.animate-container:hover {
+  transform: scale(1.02); /* Slight scale effect on hover */
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 1.2s ease-in-out;
+  color: #2e7d32; /* Dark green text */
+}
+
+.profile-info {
+  background-color: #ffffff; /* White background for contrast */
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.farmer-info {
+  background-color: #c8e6c9; /* Softer green for farmer info */
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  animation: slideIn 1.5s ease-in-out;
+}
+
+.farmer-info h2 {
+  margin-bottom: 10px;
+  color: #388e3c; /* Darker green for headings */
+}
+
+.logout-button {
+  background-color: #4caf50; /* Green button */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+  animation: fadeIn 2s ease-in-out;
+}
+
+.logout-button:hover {
+  background-color: #388e3c; /* Darker green on hover */
+}
+
+.graph-container {
+  margin-top: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.animate-slide {
+  animation: slideIn 1.5s ease-in-out;
+}

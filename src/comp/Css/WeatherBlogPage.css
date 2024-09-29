@@ -1,0 +1,121 @@
+/* Base styles for the Weather Container */
+/* Updated Weather Container */
+.WeatherContainer {
+    max-width: 600px; /* Restrict the max width for better layout */
+    margin: 0 auto; /* Center align the container */
+    padding: 20px; /* Add padding */
+    background-color: #b4ceb4; /* Light Green for better contrast */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Updated weather-main */
+.weather-main {
+    background: linear-gradient(to bottom, #a8dcbd, #307f5a);
+    padding: 20px; /* Optional: Add some padding for better spacing */
+    border-radius: 10px; /* Match the container for a cohesive look */
+}
+
+/* Search bar styling */
+.search-bar {
+    display: flex; /* Flex layout */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the search bar */
+}
+
+.search-bar input {
+    flex: 1; /* Take available space */
+    padding: 12px; /* Increase inner spacing */
+    border: 2px solid #007bff; /* Blue border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s ease; /* Transition for border color */
+}
+
+.search-bar input:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-bar img {
+    cursor: pointer; /* Pointer cursor */
+    width: 35px; /* Slightly larger icon size */
+    margin-left: 10px; /* Space between input and icon */
+    transition: transform 0.3s ease; /* Smooth transform */
+}
+
+.search-bar img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Weather data styling */
+.weather-data {
+    display: flex; /* Flex layout for columns */
+    justify-content: space-between; /* Space out columns */
+    margin-top: 20px; /* Space above */
+}
+
+.col {
+    display: flex; /* Flex layout for icon and text */
+    align-items: center; /* Center vertically */
+    flex: 1; /* Equal width for columns */
+    padding: 12px; /* Increase inner spacing */
+    border: 1px solid #e0e0e0; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin: 0 5px; /* Space between columns */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth shadow and scale transition */
+}
+
+.col:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.weather-value {
+    font-size: 24px; /* Larger text for values */
+    font-weight: bold; /* Bold font */
+    margin: 0; /* Remove margin */
+    color: #333; /* Darker color for better contrast */
+}
+
+.location {
+    font-size: 20px; /* Location font size */
+    font-weight: 500; /* Medium font weight */
+    text-align: center; /* Center align */
+    margin-top: 10px; /* Space above */
+    color: #007bff; /* Blue color for location */
+}
+
+/* Crop advice section */
+.crop-advice {
+    margin-top: 20px; /* Space above */
+    padding: 15px; /* Increase inner spacing */
+    background-color: #9dbba8; /* Light blue background for contrast */
+    border-left: 5px solid #007bff; /* Blue left border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Background transition */
+}
+
+.crop-advice h3 {
+    margin: 0; /* Remove margin */
+    color: #007bff; /* Blue color for heading */
+}
+
+.crop-advice p {
+    margin-top: 5px; /* Space above */
+    color: #555; /* Darker text color */
+}
+
+/* Loading and error messages */
+.error-message {
+    color: #ff0000; /* Red color for error */
+    font-weight: bold; /* Bold font */
+    text-align: center; /* Center align */
+}
+
+.loading {
+    text-align: center; /* Center align */
+    font-size: 18px; /* Font size */
+    color: #007bff; /* Blue color */
+}

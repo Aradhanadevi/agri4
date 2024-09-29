@@ -1,0 +1,104 @@
+[
+  {
+    "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+    "description": "Provides income support to all landholding farmers' families to supplement their financial needs.",
+    "type": "Central",
+    "url": "https://pmkisan.gov.in/"
+  },
+  {
+    "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "description": "Offers crop insurance to farmers to protect them against crop loss due to natural calamities, pests, and diseases.",
+    "type": "Central",
+    "url": "https://pmfby.gov.in/"
+  },
+  {
+    "name": "Pradhan Mantri Krishi Sinchai Yojana (PMKSY)",
+    "description": "Aims to enhance irrigation coverage and improve water use efficiency.",
+    "type": "Central",
+    "url": "https://pmksy.gov.in/"
+  },
+  {
+    "name": "Soil Health Card Scheme",
+    "description": "Provides soil health cards to farmers, which contain nutrient status of their soil along with recommendations for appropriate dosage of nutrients.",
+    "type": "Central",
+    "url": "https://soilhealth.dac.gov.in/"
+  },
+  {
+    "name": "National Agriculture Market (e-NAM)",
+    "description": "An online trading platform for agricultural commodities to ensure better price discovery and marketing.",
+    "type": "Central",
+    "url": "https://enam.gov.in/"
+  },
+  {
+    "name": "Agriculture Infrastructure Fund",
+    "description": "Provides financial support for the creation of post-harvest management infrastructure and community farming assets.",
+    "type": "Central",
+    "url": "https://agriinfra.dac.gov.in/"
+  },
+  {
+    "name": "Sat Pagla Khedut Kalyanna",
+    "description": "Promotes natural farming practices and provides financial assistance to farmers.",
+    "type": "Gujarat",
+    "url": "https://example.com/sat-pagla-khedut-kalyanna"
+  },
+  {
+    "name": "Pagala for Natural Farming",
+    "description": "Supports natural farming by offering training and resources to farmers.",
+    "type": "Gujarat",
+    "url": "https://example.com/pagala-natural-farming"
+  },
+  {
+    "name": "New Agricultural Marketing Infrastructure (AMI)",
+    "description": "Aims to improve agricultural marketing infrastructure.",
+    "type": "Gujarat",
+    "url": "https://example.com/ami"
+  },
+  {
+    "name": "Agri Clinics and Agri Business Centres Scheme (ACABC)",
+    "description": "Provides financial assistance to set up agri-clinics and business centers.",
+    "type": "Gujarat",
+    "url": "https://example.com/acabc"
+  },
+  {
+    "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
+    "description": "Provides financial assistance of ₹6,000 per year to farmers.",
+    "type": "Maharashtra",
+    "url": "https://example.com/pm-kisan-maharashtra"
+  },
+  {
+    "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+    "description": "Offers crop insurance to farmers against natural risks.",
+    "type": "Maharashtra",
+    "url": "https://example.com/pmfby-maharashtra"
+  },
+  {
+    "name": "Kisan Credit Card (KCC)",
+    "description": "Provides credit facilities to farmers for agricultural needs.",
+    "type": "Maharashtra",
+    "url": "https://example.com/kcc-maharashtra"
+  },
+  {
+    "name": "Micro Irrigation Scheme",
+    "description": "Promotes efficient water use through micro-irrigation systems.",
+    "type": "Maharashtra",
+    "url": "https://example.com/micro-irrigation-maharashtra"
+  },
+  {
+    "name": "Tamil Nadu Irrigated Agriculture Modernization Project (TNIAMP)",
+    "description": "Aims to modernize irrigation systems.",
+    "type": "Tamil Nadu",
+    "url": "https://example.com/tniamp"
+  },
+  {
+    "name": "Soil Health Card Scheme",
+    "description": "Provides soil health cards to farmers to improve soil quality.",
+    "type": "Tamil Nadu",
+    "url": "https://example.com/soil-health-card-tn"
+  },
+  {
+    "name": "Paramparagat Krishi Vikas Yojana (PKVY)",
+    "description": "Promotes organic farming practices.",
+    "type": "Tamil Nadu",
+    "url": "https://example.com/pkvy-tn"
+  }
+]
