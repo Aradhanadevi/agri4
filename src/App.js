@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "./comp/Home"
 import './App.css';
+import { ParallaxProvider } from 'react-scroll-parallax';
 import { About } from "./comp/About";
 import { Contact } from "./comp/Contact";
 import { Navbar } from "./comp/Navbar";
@@ -10,7 +11,7 @@ import Footer from "./comp/Footer";
 import { Display } from "./comp/Display";
 import FAQPage from "./comp/FAQPage";
 import BlogPage from "./comp/BlogPage";
-import { Login } from "./comp/Login";
+import { Login } from "./comp/pages/Login";
 import { Profile } from "./comp/Profile";
 import {Signup} from "./comp/Signup";
 import { GovermentSchemes } from "./comp/GovermentSchemes";
@@ -30,7 +31,8 @@ const App = (props) => {
 
   return (
     <>
-    <Navbar/>
+      <Navbar />
+      <ParallaxProvider>
       <Routes>
         <Route path="/home" element={<Home downloadNow={downloadNowFunc} />} />
         <Route path="/about" element={<About />} />
@@ -48,7 +50,8 @@ const App = (props) => {
         <Route path="/agriportal" element={<AgriculturePortal />} />
         <Route path="/know" element={<KnowledgeHub />} />
         <Route path="/weather" element={<WeatherBlogPage />} />
-      </Routes>
+        </Routes>
+        </ParallaxProvider>
       <Footer/>
     </>
   );
