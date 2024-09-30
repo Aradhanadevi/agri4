@@ -1,0 +1,159 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.login-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure it takes at least full viewport height */
+  background: linear-gradient(to bottom right, #74b49b, #2c6e49);
+  padding: 20px;
+  overflow: auto; /* Allow scrolling if needed */
+}
+
+.login-container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  max-width: 950px;
+  width: 100%;
+  overflow: hidden;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-form-container {
+  padding: 50px;
+  position: relative;
+  overflow-y: auto; /* Allow vertical scrolling */
+  max-height: 80vh; /* Limit height for scrolling */
+}
+
+.login-title {
+  font-size: 2.5rem;
+  color: #2c6e49;
+  text-align: center;
+  margin-bottom: 25px;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.decorative-divider {
+  height: 4px;
+  background: #2c6e49;
+  width: 50%;
+  margin: 0 auto 25px auto;
+}
+
+.agriculture-tip {
+  background: #e6f9f2;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.form-outline {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+.form-control {
+  border-radius: 15px;
+  border: 2px solid #bbb;
+  padding: 18px 22px;
+  font-size: 1.1rem;
+  width: 100%;
+  transition: all 0.4s ease;
+}
+
+.form-control:focus {
+  border-color: #4fa791;
+  box-shadow: 0 0 10px rgba(79, 167, 145, 0.5);
+}
+
+.btn.login-btn {
+  background-color: #4fa791;
+  color: #ffffff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn.login-btn:hover {
+  background-color: #2c6e49;
+  transform: scale(1.05);
+}
+
+.alert {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signup-link a {
+  color: #4fa791;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+.floating-leaves {
+  position: absolute;
+  bottom: 20px; /* Adjust as necessary */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  width: 100px; /* Adjust size as necessary */
+  height: 100px; /* Adjust size as necessary */
+  background-image: url('//src/comp//Bgimg//leaff.png'); /* Replace with your image */
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1; /* Ensure it's above the particles */
+  pointer-events: none; /* Prevent interaction */
+}
