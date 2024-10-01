@@ -1,3 +1,4 @@
+/* Updated CSS in Login.css */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -9,82 +10,44 @@ body {
 .login-section {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh; /* Ensure it takes at least full viewport height */
-  background: linear-gradient(to bottom right, #74b49b, #2c6e49);
   padding: 20px;
-  overflow: auto; /* Allow scrolling if needed */
+  overflow: hidden;
 }
 
 .login-container {
-  display: flex;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-  max-width: 950px;
-  width: 100%;
-  overflow: hidden;
-  animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.login-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.login-form-container {
-  padding: 50px;
   position: relative;
-  overflow-y: auto; /* Allow vertical scrolling */
-  max-height: 80vh; /* Limit height for scrolling */
+  left: 10px; /* Keep it on the extreme left */
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 100%;
+  padding: 40px;
+  z-index: 1;
 }
 
 .login-title {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #2c6e49;
   text-align: center;
-  margin-bottom: 25px;
-  animation: bounce 1s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  margin-bottom: 20px;
 }
 
 .decorative-divider {
   height: 4px;
   background: #2c6e49;
-  width: 50%;
-  margin: 0 auto 25px auto;
+  width: 40%;
+  margin: 0 auto 20px auto;
 }
 
 .agriculture-tip {
-  background: #e6f9f2;
-  padding: 20px;
+  background: #e8f6e9;
+  padding: 15px;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  animation: slideIn 0.5s ease-out;
-}
-
-@keyframes slideIn {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-.login-form-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
 }
 
 .form-outline {
@@ -93,27 +56,27 @@ body {
 }
 
 .form-control {
-  border-radius: 15px;
+  border-radius: 12px;
   border: 2px solid #bbb;
-  padding: 18px 22px;
-  font-size: 1.1rem;
+  padding: 15px 18px;
+  font-size: 1rem;
   width: 100%;
   transition: all 0.4s ease;
 }
 
 .form-control:focus {
-  border-color: #4fa791;
-  box-shadow: 0 0 10px rgba(79, 167, 145, 0.5);
+  border-color: #74b49b;
+  box-shadow: 0 0 10px rgba(116, 180, 155, 0.5);
 }
 
 .btn.login-btn {
-  background-color: #4fa791;
+  background-color: #74b49b;
   color: #ffffff;
-  padding: 15px 30px;
+  padding: 12px 25px;
   border: none;
-  border-radius: 15px;
+  border-radius: 12px;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -123,37 +86,100 @@ body {
   transform: scale(1.05);
 }
 
+.gradient-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(270deg, #f0e68d, #add8e6, #90ee90, #f5deb3);
+  background-size: 400% 400%; /* Size for smoother animation */
+  z-index: -1; /* Send it to the back */
+  animation: flow 10s infinite; /* Animation for gradient */
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+.fireflies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Make sure the fireflies don't interfere with clicks */
+  z-index: 0; /* Behind the login container */
+}
+
+.firefly {
+  position: absolute;
+  background-color: #ffeb3b; /* Firefly color */
+  border-radius: 50%;
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes flow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
 .alert {
-  color: red;
+  color: #d9534f;
+  background: #ffdddd;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 15px;
   text-align: center;
-  margin-top: 10px;
 }
 
 .signup-link {
-  text-align: center;
+  color: #2c6e49;
+  text-align: left;
   margin-top: 15px;
+  font-weight: 500;
 }
 
 .signup-link a {
   color: #4fa791;
   text-decoration: none;
-  font-weight: bold;
 }
+/* Existing styles remain unchanged */
 
-.signup-link a:hover {
-  text-decoration: underline;
-}
-
-.floating-leaves {
+.fireflies {
   position: absolute;
-  bottom: 20px; /* Adjust as necessary */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%);
-  width: 100px; /* Adjust size as necessary */
-  height: 100px; /* Adjust size as necessary */
-  background-image: url('//src/comp//Bgimg//leaff.png'); /* Replace with your image */
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 1; /* Ensure it's above the particles */
-  pointer-events: none; /* Prevent interaction */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* Make sure the fireflies don't interfere with clicks */
+  z-index: 0; /* Behind the login container */
+}
+
+.firefly {
+  position: absolute;
+  background-color: #ffeb3b; /* Firefly color */
+  border-radius: 50%;
+  width: 10px; /* Adjust size of fireflies */
+  height: 10px; /* Adjust size of fireflies */
 }
