@@ -1,27 +1,28 @@
-/* Updated CSS in Login.css */
+/* Global Styles */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
+/* Login Section */
 .login-section {
   position: relative;
   display: flex;
   align-items: flex-start;
-  min-height: 100vh; /* Ensure it takes at least full viewport height */
+  min-height: 100vh;
   padding: 20px;
   overflow: hidden;
 }
 
 .login-container {
   position: relative;
-  left: 10px; /* Keep it on the extreme left */
-  background: rgba(255, 255, 255, 0.4);
+  left: 10px;
+  background: rgba(189, 227, 164, 0.8);
   border-radius: 25px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   max-width: 450px;
   width: 100%;
   padding: 40px;
@@ -50,24 +51,30 @@ body {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Form Styles */
 .form-outline {
   position: relative;
   margin-bottom: 1.8rem;
 }
 
+.lable-container{
+  background: #ffffff;
+  border-radius: 10px;
+}
 .form-control {
-  border-radius: 12px;
-  border: 2px solid #bbb;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  background: white;
   padding: 15px 18px;
   font-size: 1rem;
   width: 100%;
   transition: all 0.4s ease;
 }
 
-.form-control:focus {
-  border-color: #74b49b;
+/* .form-control:focus {
+  border-color: #000000;
   box-shadow: 0 0 10px rgba(116, 180, 155, 0.5);
-}
+} */
 
 .btn.login-btn {
   background-color: #74b49b;
@@ -86,18 +93,56 @@ body {
   transform: scale(1.05);
 }
 
+/* Background Styles */
 .gradient-background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(270deg, #f0e68d, #add8e6, #90ee90, #f5deb3);
-  background-size: 400% 400%; /* Size for smoother animation */
-  z-index: -1; /* Send it to the back */
-  animation: flow 10s infinite; /* Animation for gradient */
+  background: radial-gradient(circle, #d2f5d6, #a2db8c, #4bbf73, #2a7d4d);
+
+  background-size: 400% 400%;
+  z-index: -1;
+  animation: flow 20s linear infinite;
 }
 
+/* Fireflies Styles */
+.fireflies {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  animation: fadeInBackground 3s ease-in;
+}
+
+.fireflies::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(255, 255, 224, 0.2), rgba(0, 0, 0, 0.8));
+  z-index: -1;
+}
+
+.firefly {
+  position: absolute;
+  background-color: #ffeb3b;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  opacity: 0.8;
+  animation: blink 4s infinite ease-in-out, moveRandom 20s infinite linear;
+  box-shadow: 0 0 20px #ffeb3b;
+}
+
+/* Keyframes */
 @keyframes flow {
   0% {
     background-position: 0 0;
@@ -107,21 +152,13 @@ body {
   }
 }
 
-.fireflies {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none; /* Make sure the fireflies don't interfere with clicks */
-  z-index: 0; /* Behind the login container */
-}
-
-.firefly {
-  position: absolute;
-  background-color: #ffeb3b; /* Firefly color */
-  border-radius: 50%;
-  animation: flicker 1.5s infinite alternate;
+@keyframes fadeInBackground {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes flicker {
@@ -135,17 +172,27 @@ body {
   }
 }
 
-@keyframes flow {
+@keyframes twinkle {
   0% {
-    background-position: 0 0;
+    opacity: 0.5;
   }
   100% {
-    background-position: 100% 100%;
+    opacity: 1;
   }
 }
 
+@keyframes moveRandom {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(calc(100% * var(--random-left)), calc(100% * var(--random-top)));
+  }
+}
+
+/* Alert Styles */
 .alert {
-  color: #d9534f;
+  color: #ff0800;
   background: #ffdddd;
   padding: 10px;
   border-radius: 10px;
@@ -153,6 +200,7 @@ body {
   text-align: center;
 }
 
+/* Signup Link Styles */
 .signup-link {
   color: #2c6e49;
   text-align: left;
@@ -164,22 +212,33 @@ body {
   color: #4fa791;
   text-decoration: none;
 }
-/* Existing styles remain unchanged */
 
-.fireflies {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none; /* Make sure the fireflies don't interfere with clicks */
-  z-index: 0; /* Behind the login container */
+/* Media Queries */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 20px;
+    max-width: 350px;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+  }
+
+  .btn.login-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+.input-wrapper {
+  margin-bottom: 20px; /* Space between the input fields and the button */
+  background-color: rgba(187, 231, 187, 0.441); /* Light background for contrast */
+  padding: 15px; /* Padding around the input fields */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-.firefly {
-  position: absolute;
-  background-color: #ffeb3b; /* Firefly color */
-  border-radius: 50%;
-  width: 10px; /* Adjust size of fireflies */
-  height: 10px; /* Adjust size of fireflies */
+/* CSS Variables */
+:root {
+  --random-top: calc(0.1 + (random() * 0.8));
+  --random-left: calc(0.1 + (random() * 0.8));
 }

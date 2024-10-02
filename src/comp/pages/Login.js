@@ -5,9 +5,9 @@ import { FaSeedling } from "react-icons/fa";
 import "../Css/Pages/Login.css";
 
 const tips = [
-  "Organic farming helps maintain healthy soil by increasing the organic matter in the ground.",
-  "Composting is a great way to reduce waste and create nutrient-rich fertilizer for your garden.",
-  "Planting cover crops can help suppress weeds, improve soil fertility, and prevent erosion.",
+  "Farming sustainably ensures better productivity for future generations.",
+  "Using natural pesticides can help maintain healthy crops and reduce chemical impact.",
+  "Diverse cropping helps improve ecosystem resilience and ensures stable yields.",
 ];
 
 export const Login = () => {
@@ -40,9 +40,8 @@ export const Login = () => {
 
   return (
     <motion.section className="login-section">
-      <div className="gradient-background" /> {/* Add the gradient background */}
-      
-      {/* Create fireflies directly */}
+      <div className="gradient-background" />
+
       <div className="fireflies">
         {Array.from({ length: 50 }).map((_, index) => (
           <motion.div
@@ -54,14 +53,14 @@ export const Login = () => {
               opacity: [0.2, 0.7, 0.2],
             }}
             transition={{
-              duration: Math.random() * 2 + 1, // Random duration between 1s and 3s
+              duration: Math.random() * 2 + 1,
               repeat: Infinity,
               repeatType: "reverse",
             }}
           />
         ))}
       </div>
-      
+
       <motion.div
         className="login-container"
         initial={{ y: -100, opacity: 0 }}
@@ -82,30 +81,37 @@ export const Login = () => {
             <h3>Did You Know?</h3>
             <p>{tips[currentTip]}</p>
           </motion.div>
-          <div className="form-outline">
-            <input
-              type="email"
-              className="form-control"
-              placeholder=" "
-              name="email"
-              value={credentials.email}
-              onChange={handleInputChange}
-              required
-            />
-            <label className="form-label">Email address</label>
+          
+          {/* New div wrapping email and password inputs */}
+          <div className="input-wrapper">
+            <div className="form-outline">
+              <div className="lable-container">
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                value={credentials.email}
+                onChange={handleInputChange}
+                required
+                />
+                </div>
+              <label className="floating-label">Email address</label>
+            </div>
+            <div className="form-outline">
+              <div className="lable-container">
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                value={credentials.password}
+                onChange={handleInputChange}
+                required
+                />
+                </div>
+              <label className="floating-label">Password</label>
+            </div>
           </div>
-          <div className="form-outline">
-            <input
-              type="password"
-              className="form-control"
-              placeholder=" "
-              name="password"
-              value={credentials.password}
-              onChange={handleInputChange}
-              required
-            />
-            <label className="form-label">Password</label>
-          </div>
+
           <motion.button
             type="submit"
             className="btn login-btn"

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../comp/Css/WeatherBlogPage.css"; // Ensure this CSS file exists
-import search_icon from "../Assets/search.png";
-import humidity_icon from "../Assets/humidity.png";
-import wind_icon from "../Assets/wind.png";
-import rain_icon from "../Assets/rain.png";
+import search_icon from "../comp/Assets/search.png";
+import humidity_icon from "../comp/Assets/humidity.png";
+import wind_icon from "../comp/Assets/wind.png";
+// import rain_icon from "../Assets/rain.png";
 
 const WeatherBlogPage = () => {
   const [city, setCity] = useState("London");
