@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaSeedling } from "react-icons/fa";
 import "../Css/Pages/Login.css";
+import image1 from '../Assets/carosule_images/misty_forest.jpg';
 
 const tips = [
   "Farming sustainably ensures better productivity for future generations.",
@@ -68,8 +69,14 @@ export const Login = () => {
         transition={{ duration: 1, ease: "easeInOut" }}
       >
         <form className="login-form" onSubmit={handleSubmit}>
+          <div className="login-image-holder">
+            {/* <div className="image-content-slider"><img className="img-display" src={image1} /></div> */}
+          </div>
           <h2 className="login-title">
-            <FaSeedling /> Welcome Back to AgriWorld
+            <div className="login-title-logo">
+              <FaSeedling />
+            </div>{" "}
+            Welcome Back to AgriWorld
           </h2>
           <div className="decorative-divider"></div>
           <motion.div
@@ -81,33 +88,33 @@ export const Login = () => {
             <h3>Did You Know?</h3>
             <p>{tips[currentTip]}</p>
           </motion.div>
-          
+
           {/* New div wrapping email and password inputs */}
           <div className="input-wrapper">
             <div className="form-outline">
               <div className="lable-container">
-              <input
-                type="email"
-                className="form-control"
-                name="email"
-                value={credentials.email}
-                onChange={handleInputChange}
-                required
+                <input
+                  type="email"
+                  className="form-control"
+                  name="email"
+                  value={credentials.email}
+                  onChange={handleInputChange}
+                  required
                 />
-                </div>
+              </div>
               <label className="floating-label">Email address</label>
             </div>
             <div className="form-outline">
               <div className="lable-container">
-              <input
-                type="password"
-                className="form-control"
-                name="password"
-                value={credentials.password}
-                onChange={handleInputChange}
-                required
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  value={credentials.password}
+                  onChange={handleInputChange}
+                  required
                 />
-                </div>
+              </div>
               <label className="floating-label">Password</label>
             </div>
           </div>
@@ -122,7 +129,9 @@ export const Login = () => {
           </motion.button>
           {error && <div className="alert">{error}</div>}
           <div className="signup-link">
-            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            <p className="sign-up-text">
+              Don't have an account? <a href="/signup">Sign Up</a>
+            </p>
           </div>
         </form>
       </motion.div>

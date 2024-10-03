@@ -50,11 +50,16 @@
     text-align: center; /* Center text in the item */
   }
   .navbar-toggler {
-    border-color: #343440; /* Border color of the navbar toggler button */
+    border-color: #b8b8c4; /* Border color of the navbar toggler button */
+    /* background: #349668;
+    color: aqua; */
+    
   }
   
   .navbar-toggler-icon {
-    background-color: #343440; /* Dark color for the icon lines */
+    background-color: rgb(181, 181, 194, .4);
+    border-radius: 5px;
+    border-color: red;
   }
   
   
