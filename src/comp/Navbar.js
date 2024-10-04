@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from './Bgimg/logo.png';
 import '../comp/Css/Navbar.css';
-
+//this is navbar
 export const Navbar = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const name = localStorage.getItem('name');
