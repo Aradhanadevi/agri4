@@ -7,7 +7,7 @@ export const Navbar = () => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const name = localStorage.getItem('name');
 
-  // Toggle the collapsed state
+  // Toggle the collapsed state function
   const toggleNavbar = () => {
     setIsCollapsed(!isCollapsed);
   };
