@@ -67,7 +67,7 @@
 
 @media (max-width: 576px) {
   .nav-link {
-    font-size: 15px; /* Smaller font size for extra small screens */
+    font-size: 14px; /* Smaller font size for extra small screens */
   }
   .navbar-toggler {
 
