@@ -1,8 +1,13 @@
 /* General Styles */
 .navbar {
-  background-color: #f8f9fa; /* Light background for the navbar */
-  padding: 15px 20px; /* Padding for the navbar */
-  border-bottom: 2px solid #e9ecef; /* Subtle border for separation */
+  background-color: #e1f7d5; /* Light pastel green for the navbar */
+  padding: 10px 15px; /* Reduced padding for a sleeker look */
+  border-bottom: 2px solid #c8e0b7; /* Soft border for separation */
+  position: sticky; /* Make the navbar sticky */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it stays on top of other content */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease; /* Smooth background transition */
 }
 
 .navbar-brand {
@@ -11,8 +16,8 @@
 }
 
 .navbar-brand img {
-  width: 40px; /* Logo size increased for better visibility */
-  margin-right: 10px; /* Spacing between logo and text */
+  width: 35px; /* Slightly smaller logo size */
+  margin-right: 8px; /* Spacing between logo and text */
 }
 
 .navbar-nav {
@@ -20,23 +25,66 @@
 }
 
 .nav-item {
-  margin: 5px 10px; /* Space between items */
+  margin: 0 8px; /* Reduced space between items for a sleeker look */
+  position: relative; /* To position dropdowns */
 }
 
 .nav-link {
-  color: #343440; /* Default link color */
+  color: #4b4b4d; /* Dark grey for the link color */
   text-transform: uppercase; /* Transform text to uppercase */
-  font-size: 16px; /* Base font size */
+  font-size: 15px; /* Slightly smaller base font size */
   font-family: 'Cabin', sans-serif; /* Font family */
-  letter-spacing: 1px; /* Spacing between letters */
-  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth color transition on hover */
-  padding: 8px 15px; /* Padding for better touch target size */
+  letter-spacing: 0.5px; /* Reduced letter spacing */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s; /* Smooth transition for hover effects */
+  padding: 8px 12px; /* Reduced padding for a sleeker touch */
   border-radius: 5px; /* Rounded edges for links */
 }
 
 .nav-link:hover {
   color: #ffffff; /* White text color on hover */
-  background-color: #349668; /* Dark background on hover */
+  background-color: #3c8046; /* Dark green background on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: absolute; /* Position dropdowns relative to nav items */
+  display: none; /* Hide dropdowns initially */
+  background-color: #f8f9f5; /* Light grey-green for dropdown background */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+  border-radius: 5px; /* Rounded edges */
+  z-index: 999; /* Ensure it appears above other content */
+  min-width: 150px; /* Minimum width for dropdown */
+}
+
+.nav-item:hover .dropdown {
+  display: block; /* Show dropdown on hover */
+  animation: fadeIn 0.3s ease; /* Fade in effect for dropdown */
+}
+
+.dropdown-item {
+  padding: 10px 15px; /* Padding for dropdown items */
+  color: #4b4b4d; /* Dark grey for dropdown items */
+  text-transform: none; /* Keep text normal */
+  transition: background-color 0.3s ease; /* Smooth background transition */
+  background-color: #ffffff; /* White background for dropdown items */
+}
+
+.dropdown-item:hover {
+  background-color: #3c8046; /* Dark green background on hover */
+  color: #ffffff; /* White text color on hover */
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start fully transparent */
+    transform: translateY(-5px); /* Start slightly above */
+  }
+  to {
+    opacity: 1; /* Fully opaque */
+    transform: translateY(0); /* End in position */
+  }
 }
 
 /* Responsive styling */
@@ -48,37 +96,47 @@
   .nav-item {
     flex-basis: 100%; /* Each item takes full width */
     text-align: center; /* Center text in the item */
+    margin: 5px 0; /* Margin adjustment for smaller screens */
   }
+
   .navbar-toggler {
-    border-color: #b8b8c4; /* Border color of the navbar toggler button */
-    /* background: #349668;
-    color: aqua; */
-    
+    border: none; /* Remove border */
+    background-color: #3c8046; /* Dark green for the toggler */
   }
-  
+
   .navbar-toggler-icon {
-    background-color: rgb(181, 181, 194, .4);
-    border-radius: 5px;
-    border-color: red;
+    background-color: transparent; /* Make background transparent */
+    position: relative; /* Position for lines */
+    display: flex; /* Flex to center lines */
+    flex-direction: column; /* Stack lines vertically */
+    justify-content: space-around; /* Space lines evenly */
+    width: 30px; /* Width of the icon */
+    height: 24px; /* Height of the icon */
   }
-  
-  
+  /* .container-fluid{
+    background-color: #3c8046;
+  } */
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: '';
+    width: 100%; /* Full width for lines */
+    height: 3px; /* Height of lines */
+    background-color: white; /* Color of lines */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
 }
 
 @media (max-width: 576px) {
   .nav-link {
-    font-size: 14px; /* Smaller font size for extra small screens */
+    font-size: 13px; /* Smaller font size for extra small screens */
   }
+
   .navbar-toggler {
-
-    background-color: #343440;
-    color: white;
+    background-color: #3c8046; /* Dark background for the toggler */
+    color: white; /* White color for the toggler text */
   }
-  
+
   .navbar-toggler-icon {
-    background-color: #343440; /* Dark color for the icon lines */
+    background-color: transparent; /* Ensure it's transparent */
   }
-  
-
 }
-

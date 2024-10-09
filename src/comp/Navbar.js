@@ -40,7 +40,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <nav className="navbar ">
       <div className="container-fluid">
         <a className="navbar-brand" href="/agriportal">
           <img src={logo} width="40" height="40" className="d-inline-block align-top" alt="Logo" />
@@ -83,6 +83,14 @@ export const Navbar = () => {
                 <NavLink className="nav-link" to="/profile" onClick={toggleNavbar}>Welcome, {name}</NavLink>
               </li>
             )}
+            {/* Dropdown Menu Example */}
+            <li className="nav-item dropdown">
+              <NavLink className="nav-link" to="#" onClick={toggleNavbar}>More</NavLink>
+              <div className="dropdown">
+                <NavLink className="dropdown-item" to="/contacts" onClick={toggleNavbar}>Contacts</NavLink>
+                <NavLink className="dropdown-item" to="/about" onClick={toggleNavbar}>About Us</NavLink>
+              </div>
+            </li>
           </ul>
           <div id="google_translate_element" className="google-translate-container"></div>
         </div>
