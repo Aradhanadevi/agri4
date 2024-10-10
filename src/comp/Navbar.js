@@ -1,102 +1,75 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import logo from './Bgimg/logo.png';
 import '../comp/Css/Navbar.css';
 
-export const Navbar = () => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-  const name = localStorage.getItem('name');
+export const CustomNavbar = () => {
+  const [isNavbarCollapsed, setIsNavbarCollapsed] = useState(true);
+  const username = localStorage.getItem('name');
 
-  // Toggle the collapsed state function
-  const toggleNavbar = () => {
-    setIsCollapsed(!isCollapsed);
+  // Function to toggle the navbar's collapsed state
+  const handleNavbarToggle = () => {
+    setIsNavbarCollapsed((prevState) => !prevState);
   };
 
-  // Close navbar when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (!event.target.closest('.navbar')) {
-        setIsCollapsed(true);
-      }
-    };
+  // Function to close navbar when clicking outside
+  const handleClickOutside = (event) => {
+    if (!event.target.closest('.navbar')) {
+      setIsNavbarCollapsed(true);
+    }
+  };
 
+  // Initialize Google Translate widget
+  const initializeGoogleTranslate = () => {
+    if (window.google && window.google.translate) {
+      new window.google.translate.TranslateElement(
+        { pageLanguage: 'en' },
+        'google_translate_element'
+      );
+    }
+  };
+
+  useEffect(() => {
     document.addEventListener('click', handleClickOutside);
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
 
-  // Initialize Google Translate widget
   useEffect(() => {
-    const addGoogleTranslate = () => {
-      if (window.google && window.google.translate) {
-        new window.google.translate.TranslateElement(
-          { pageLanguage: 'en' },
-          'google_translate_element'
-        );
-      }
-    };
-    addGoogleTranslate();
+    initializeGoogleTranslate();
   }, []);
 
   return (
-    <nav className="navbar ">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="/agriportal">
+    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand href="/agriportal">
           <img src={logo} width="40" height="40" className="d-inline-block align-top" alt="Logo" />
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          onClick={toggleNavbar}
-          aria-controls="navbarNav"
-          aria-expanded={!isCollapsed}
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className={`collapse navbar-collapse ${isCollapsed ? '' : 'show'}`} id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/" onClick={toggleNavbar}>Login</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/agriportal" onClick={toggleNavbar}>Home</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/know" onClick={toggleNavbar}>Knowledge</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/cropadvisory" onClick={toggleNavbar}>Advisory</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/scehemes" onClick={toggleNavbar}>Schemes</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/marketinfo" onClick={toggleNavbar}>Market Info</NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="/weather" onClick={toggleNavbar}>Weather</NavLink>
-            </li>
-            {name && name !== 'undefined' && (
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/profile" onClick={toggleNavbar}>Welcome, {name}</NavLink>
-              </li>
+        </Navbar.Brand>
+        <Navbar.Toggle onClick={handleNavbarToggle} aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav" className={`${isNavbarCollapsed ? '' : 'show'}`}>
+          <Nav className="me-auto">
+            <Nav.Link as={NavLink} to="/" onClick={handleNavbarToggle}>Login</Nav.Link>
+            <Nav.Link as={NavLink} to="/agriportal" onClick={handleNavbarToggle}>Home</Nav.Link>
+            <Nav.Link as={NavLink} to="/know" onClick={handleNavbarToggle}>Knowledge</Nav.Link>
+            <Nav.Link as={NavLink} to="/cropadvisory" onClick={handleNavbarToggle}>Advisory</Nav.Link>
+            <Nav.Link as={NavLink} to="/scehemes" onClick={handleNavbarToggle}>Schemes</Nav.Link>
+            <Nav.Link as={NavLink} to="/marketinfo" onClick={handleNavbarToggle}>Market Info</Nav.Link>
+            <Nav.Link as={NavLink} to="/weather" onClick={handleNavbarToggle}>Weather</Nav.Link>
+            {username && username !== 'undefined' && (
+              <Nav.Link as={NavLink} to="/profile" onClick={handleNavbarToggle}>Welcome, {username}</Nav.Link>
             )}
-            {/* Dropdown Menu Example */}
-            <li className="nav-item dropdown">
-              <NavLink className="nav-link" to="#" onClick={toggleNavbar}>More</NavLink>
-              <div className="dropdown">
-                <NavLink className="dropdown-item" to="/contacts" onClick={toggleNavbar}>Contacts</NavLink>
-                <NavLink className="dropdown-item" to="/about" onClick={toggleNavbar}>About Us</NavLink>
-              </div>
-            </li>
-          </ul>
+            <NavDropdown title="More" id="collapsible-nav-dropdown">
+              <NavDropdown.Item as={NavLink} to="/contacts" onClick={handleNavbarToggle}>Contacts</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/about" onClick={handleNavbarToggle}>About Us</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
           <div id="google_translate_element" className="google-translate-container"></div>
-        </div>
-      </div>
-    </nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default CustomNavbar;

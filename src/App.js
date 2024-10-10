@@ -4,7 +4,7 @@ import './App.css';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { About } from "./comp/About";
 import { Contact } from "./comp/Contact";
-import { Navbar } from "./comp/Navbar";
+import CustomNavbar, { Navbar } from "./comp/Navbar";
 import { Free } from "./comp/Free";
 import { useState } from "react";
 import Footer from "./comp/Footer";
@@ -31,7 +31,7 @@ const App = (props) => {
 
   return (
     <>
-      <Navbar />
+      <CustomNavbar />
       <ParallaxProvider>
       <Routes>
         <Route path="/home" element={<Home downloadNow={downloadNowFunc} />} />
