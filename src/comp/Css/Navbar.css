@@ -43,7 +43,7 @@ body {
 .topnav .icon {
   display: none;
   font-size: 30px;
-  color: white;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   transition: transform 0.3s ease;
 }
