@@ -35,7 +35,7 @@ body {
 }
 
 .topnav .nav-link:hover {
-  background-color: #35563685; /* Darker Green */
+  background-color: #6bd46e85; /* Darker Green */
   transform: scale(1.1);
   border-radius: 15px;
 }
