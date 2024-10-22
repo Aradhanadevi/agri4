@@ -46,7 +46,7 @@ const CustomNavbar = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-  
+  //return
   return (
     <div className={`topnav ${isNavbarCollapsed ? '' : 'responsive'}`}>
       <NavLink to="/agriportal" className="logo">
