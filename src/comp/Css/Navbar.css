@@ -1,4 +1,4 @@
-* {
+\* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,7 +6,9 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f3f3;
   transition: background-color 0.3s ease-in-out;
+  color: #333;
 }
 
 .topnav {
@@ -14,36 +16,36 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background-color: #4CAF50; 
-  padding: 10px;
+  background-color: #4CAF50;
+  padding: 12px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 1000;
   transition: all 0.5s ease-in-out;
 }
 
 .topnav .logo img {
-  max-width: 40px;
+  max-width: 45px;
   transition: transform 0.3s ease;
 }
 
 .topnav .nav-link {
-  color: rgb(255, 255, 255);
-  text-align: center;
-  padding: 10px 15px;
+  color: #fff;
+  padding: 12px 18px;
   text-decoration: none;
+  border-radius: 20px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .topnav .nav-link:hover {
-  background-color: #6bd46e85; /* Darker Green */
+  background-color: #6bd46e85;
   transform: scale(1.1);
-  border-radius: 15px;
 }
 
 .topnav .icon {
   display: none;
   font-size: 30px;
-  color: rgb(0, 0, 0);
+  color: #333;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -55,8 +57,8 @@ body {
 .topnav.responsive .nav-link {
   display: block;
   width: 100%;
+  padding: 12px;
   text-align: left;
-  padding: 10px;
   animation: fadeIn 0.5s ease-in-out forwards;
 }
 
@@ -64,7 +66,8 @@ body {
   .topnav {
     flex-direction: column;
     align-items: flex-start;
-    background-color: #339d36;
+    padding: 15px 10px;
+    background-color: #3b8e39;
   }
   
   .topnav .nav-link {
@@ -74,7 +77,8 @@ body {
   .topnav.responsive .nav-link {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .topnav .icon {
@@ -89,16 +93,16 @@ body {
 
 @media screen and (max-width: 480px) {
   .topnav {
-    padding: 5px;
+    padding: 8px;
   }
   
   .topnav .logo img {
-    max-width: 30px;
+    max-width: 35px;
     transform: scale(1.1);
   }
   
   .topnav .nav-link {
-    padding: 8px 12px;
+    padding: 10px;
   }
 }
 
@@ -114,5 +118,6 @@ body {
 }
 
 .google-translate-container {
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 14px;
 }
